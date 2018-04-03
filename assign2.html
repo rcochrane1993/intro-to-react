@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React app</title>
+  </head>
+  <body>
+
+
+    <div id="comp2"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+       class CompTwo extends React.Component {
+         constructor(props){
+           super(props);
+           this.state = {
+             number: 1,
+             course:"Web Developer"
+           }
+         }
+         render() {
+           return (
+             <div>
+               <h2>Here is my {this.props.name}!</h2>
+               <h3>Current course: {this.state.course}</h3>
+               <h4>Modules completed :{this.state.number}</h4>
+             </div>
+           );
+         }
+       }
+       ReactDOM.render(
+         <CompTwo name= "First Prop" />, document.getElementById('comp2')
+       );
+    </script>
+  </body>
+</html>
